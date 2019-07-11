@@ -21,7 +21,7 @@ const IndexPage = () => (
                 <Image />
               </div>
             </div>
-            <h1 className="developer__position" style={{ textAlign: 'center' }} >Front-end Developer</h1>
+            <h2 className="developer__position" style={{ textAlign: 'center' }} >Front-end Developer</h2>
             <h3 className="developer__name" style={{ textAlign: 'center' }} >Jhon Alexander Gil Beltrán</h3>
         </section>
         <section className="developer_contact">
