@@ -1,9 +1,36 @@
 import React from "react"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+
+const Icons = () => {
+    const { allFile } = useStaticQuery(graphql`{
+        allFile(filter: {extension: {eq: "svg"}}) {
+            edges {
+                node {
+                    publicURL
+                    name
+                    id
+                }
+            }
+        }
+    }`)
+    return (<React.Fragment>{
+        allFile.edges.map((image, indice) => {
+            return (
+                <div key={image.node.id} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
+                    <div style={{ display: 'flex', width: '40px', height: 'auto', alignItems: 'center', justifyContent: 'center' }} >
+                        <img style={{ width: '100%', margin: '0' }} src={image.node.publicURL} alt={image.node.name} />
+                    </div>
+                    <span>{image.node.name}</span>
+                </div>
+            )
+        })
+    }</React.Fragment>)
+}
 
 const IndexPage = () => (
   <Layout>
@@ -49,106 +76,9 @@ const IndexPage = () => (
         <span>Bachiller Técnico | I.E.D Paulo Freire</span>
         <span>2010</span>
     </section>
-    <section className="skills">
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/html5.svg" alt="HTML" />
-            </div>
-            <span>HTML</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/css-5.svg" alt="CSS" />
-            </div>
-            <span>CSS</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/javascript.svg" alt="Javascript" />
-            </div>
-            <span>Javascript</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/react.svg" alt="React" />
-            </div>
-            <span>React</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/react-router.svg" alt="React Router" />
-            </div>
-            <span>React Router</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/redux.svg" alt="Redux" />
-            </div>
-            <span>Redux</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/webpack.svg" alt="Webpack" />
-            </div>
-            <span>Webpack</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/node.js.svg" alt="Node" />
-            </div>
-            <span>Node.js</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/express.js.svg" alt="Express" />
-            </div>
-            <span>Express.js</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/firebase-2.svg" alt="Firebase" />
-            </div>
-            <span>Firebase</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/mongodb.svg" alt="MongoDB" />
-            </div>
-            <span>MongoDB</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/graphql.svg" alt="GraphQL" />
-            </div>
-            <span>GraphQL</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/gatsby.svg" alt="Gatsby" />
-            </div>
-            <span>Gatsby</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/pwa.svg" alt="PWA" />
-            </div>
-            <span>Progresive web app</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/git-icon.svg" alt="Git" />
-            </div>
-            <span>Git</span>
-        </div>
-        <div className="skills__item">
-            <div className="logo">
-                <img src="./img/github-1.svg" alt="GitHub" />
-            </div>
-            <span>GitHub</span>
-        </div>
+    <section style={{ display: 'flex', flexFlow: 'wrap' }}>
+        <Icons />
     </section>
-
-    
     {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
