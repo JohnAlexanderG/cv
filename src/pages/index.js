@@ -6,9 +6,11 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
+const list = [ 'html', 'css', 'javascript', 'react', 'react router', 'redux', 'webpack', 'node.js', 'express', 'firebase', 'mongodb', 'graphql', 'gatsby', 'progresive web app', 'git', 'github' ];
+
 const Icons = () => {
     const { allFile } = useStaticQuery(graphql`{
-        allFile(filter: {extension: {eq: "svg"}}) {
+        allFile(filter: { extension: { eq: "svg" } }) {
             edges {
                 node {
                     publicURL
@@ -18,18 +20,24 @@ const Icons = () => {
             }
         }
     }`)
-    return (<React.Fragment>{
-        allFile.edges.map((image, indice) => {
-            return (
-                <div key={image.node.id} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
-                    <div style={{ display: 'flex', width: '40px', height: 'auto', alignItems: 'center', justifyContent: 'center' }} >
-                        <img style={{ width: '100%', margin: '0' }} src={image.node.publicURL} alt={image.node.name} />
-                    </div>
-                    <span>{image.node.name}</span>
-                </div>
-            )
+    return (<React.Fragment>{ 
+        list.map((item) => {
+            return allFile.edges.map((image) => {
+                if (image.node.name == item) {
+                    console.log(image.node.name == item && image.node.name);
+                    return (
+                        <div key={image.node.id} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
+                            <div style={{ display: 'flex', width: '40px', height: 'auto', alignItems: 'center', justifyContent: 'center' }} >
+                                <img style={{ width: '100%', margin: '0' }} src={image.node.publicURL} alt={image.node.name} />
+                            </div>
+                            <span>{image.node.name}</span>
+                        </div>
+                    )
+                }
+            })
         })
-    }</React.Fragment>)
+    }
+    </React.Fragment>)
 }
 
 const IndexPage = () => (
@@ -76,7 +84,7 @@ const IndexPage = () => (
         <span>Bachiller Técnico | I.E.D Paulo Freire</span>
         <span>2010</span>
     </section>
-    <section style={{ display: 'flex', flexFlow: 'wrap' }}>
+    <section style={{ display: 'flex', flexFlow: 'wrap', justifyContent: 'center' }}>
         <Icons />
     </section>
     {/* <Link to="/page-2/">Go to page 2</Link> */}
