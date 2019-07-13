@@ -26,7 +26,9 @@ const Icons = () => {
                 if (image.node.name == item) {
                     console.log(image.node.name == item && image.node.name);
                     return (
-                        <div key={image.node.id} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem' }}>
+
+
+                        <div key={image.node.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-evenly', width: '100px', height: '125px', margin: '.5rem' }}>
                             <div style={{ display: 'flex', width: '40px', height: 'auto', alignItems: 'center', justifyContent: 'center' }} >
                                 <img style={{ width: '100%', margin: '0' }} src={image.node.publicURL} alt={image.node.name} />
                             </div>
