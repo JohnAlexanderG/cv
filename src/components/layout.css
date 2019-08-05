@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 
 html {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -95,7 +100,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1em;
 }
 figure {
@@ -200,9 +205,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: #1e1e1e;
-  color: #c5c5c5;
-  font-family: georgia, serif;
+  background-color: #e4e4e4;
+  color: #1d2434;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -621,4 +626,61 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.encabezado {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.developer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.developer h3 {
+  font-size: 1rem;
+}
+
+.developer__photo {
+  display: 'flex';
+  justify-content: 'center';
+  padding-top: '1.45rem';
+}
+
+.encabezado .description {
+  width: 60%;
+}
+
+.seccion {
+  padding: 1rem 0;
+}
+
+.social-networks__list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-networks__item {
+  padding: 0.25rem;
+  border: 1px solid #e1e1e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-networks__item:first-child {
+  padding-left: 0;
+}
+
+.social-networks__item a {
+  line-height: 0;
+}
+
+.social-networks img {
+  width: 25px;
 }

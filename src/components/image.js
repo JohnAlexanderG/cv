@@ -14,15 +14,15 @@ import { useStaticQuery, graphql } from "gatsby"
  */
 
 const Image = () => {
-  const data = useStaticQuery(graphql`
+  const { file } = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "foto.png" }) {
+      file( relativePath: { eq: "foto.png" }) {
         publicURL
       }
     }
   `)
 
-  return <img src={data.placeholderImage.publicURL} alt="foto" style={{ outline: 0, display: 'block' }} />
+  return <img src={file.publicURL} alt="foto" style={{ outline: 0, display: 'block', border: '5px solid #c1c1c1', borderRadius: '50%' }} />
 }
 
 export default Image
