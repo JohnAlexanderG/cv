@@ -50,7 +50,7 @@ const IndexPage = () => (
         </section>
         <section>
             <article className="seccion">
-                <h2>Education</h2>
+                <h2>Educación básica</h2>
                 <span>Bachiller Técnico | I.E.D Paulo Freire</span> <span>2010</span>
             </article>
         </section>
