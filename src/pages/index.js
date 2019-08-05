@@ -21,7 +21,7 @@ const IndexPage = () => (
             <h3 className="developer__name" style={{ textAlign: 'center' }} >jhon alexander gil beltrán</h3>
         </section>
         <section className="description">
-            <p>Desarrollador front-end autodidacta y apasionado por aprender el aprendizaje, con un gran conocimiento en tecnologías como lo son Javascript, React, Node.js por mensionar algunas.</p>
+            <p>Desarrollador front-end autodidacta y apasionado por el aprendizaje, con un gran conocimiento en tecnologías como lo son Javascript, React, Node.js por mensionar algunas.</p>
             <SocialNetworks />
         </section>
     </header>
