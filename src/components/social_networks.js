@@ -46,7 +46,7 @@ const SocialNetworks = () => {
                     </a>
                 </li>
                 <li className="social-networks__item">
-                    <a href="https://wa.me/573142555359" >
+                    <a href="https://wa.me/573142555359" target="_blank" >
                         <img src={whatsapp.publicURL} alt="linkedin.com/jhonalexanderg" />
                     </a>
                 </li>

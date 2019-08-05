@@ -21,14 +21,9 @@ const IndexPage = () => (
             <h3 className="developer__name" style={{ textAlign: 'center' }} >jhon alexander gil beltrán</h3>
         </section>
         <section className="description">
-            <p>Desarrollador front-end autodidacta y apasionado por aprender mucho más cada día, con un gran conocimiento en tecnologías como lo son Javascript, React, Node.js por mensionar algunas.</p>
+            <p>Desarrollador front-end autodidacta y apasionado por aprender el aprendizaje, con un gran conocimiento en tecnologías como lo son Javascript, React, Node.js por mensionar algunas.</p>
             <SocialNetworks />
         </section>
-        {/* <section className="developer_contact">
-            <div className="developer_contact__mail"></div>
-            <div className="developer_contact__phone"></div>
-            <div className="developer_contact__city">Bogotá, Colombia.</div>
-        </section> */}
     </header>
     <main>
         <section>
@@ -36,12 +31,15 @@ const IndexPage = () => (
                 <h2>Experiencia laboral</h2>
                 <section>
                     FrontEnd engineer || KIUX S.A.S || 2016 - 2019
+                    <p>Desarrollo front-end del sistema de registro de actividades <a href="https://kiux.app" target="_blank">KIUX app</a></p>
                 </section>
                 <section>
                     Auxiliar del servicio de atención al cliente || SOLMAQ BUNZL || 2015
+                    <p>Venta de productos EPP (elementos de protección personal), asesoria y atención directa y telefónica al cliente.</p>
                 </section>
                 <section>
                     Soporte técnico || INTEGRA TIC S.A.S || 2014
+                    <p>Servicio técnico preventivo para computadores, instalación de redes, matenimiento técnico de computadores y desarrollo de paginas web.</p>
                 </section>
             </article>
         </section>
